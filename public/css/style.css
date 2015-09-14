@@ -1,0 +1,32 @@
+.row div{
+   /* height: 100px;
+      background: gray;
+    */
+}
+a.spoiler:after{
+    content: ' [-]';
+}
+a.spoiler.collapsed:after{
+    content: ' [+]';
+}
+.nav-tabs {
+    margin-bottom: 15px;
+}
+
+
+    /*где 2 попадет в data-colums="2"*/
+    /* теперь уберем классы из : catalog.php
+    БЫЛО
+    <? for($i=1;$i<=5;$i++): ?>
+           <div class="col-xs-6 col-sm-4">
+    СТАЛО
+    <? for($i=1;$i<=5;$i++): ?>
+           <div>
+    :: теперь этими классами будет управлять masonry
+    
+    XS захватвает все разрешения
+    */
+@media screen and (max-width: 767px)                        {	.masonry[data-columns]::before {	content: '1 .col-xs-12';}}
+@media screen and (min-width: 768px) and (max-width:  991px){	.masonry[data-columns]::before {	content: '2 .col-xs-6'; }}
+@media screen and (min-width: 992px) and (max-width: 1199px){	.masonry[data-columns]::before {	content: '3 .col-xs-4'; }}
+@media screen and (min-width: 1200px)                       {	.masonry[data-columns]::before {	content: '4 .col-xs-3';	}}
