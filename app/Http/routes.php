@@ -10,8 +10,9 @@
 | and give it the controller to call when that URI is requested.
 | http://laravel.com/docs/5.1/routing
 */
-
-Route::get('/', ['as'=>'home', function () {return view('home');}]); //USES app/Http/Middleware/RedirectIfAuthenticated.php
+get('/',                ['as'=>'home',           'uses'=>'IndexController@index']); //USES app/Http/Middleware/RedirectIfAuthenticated.php
+get('projects',         ['as'=>'projectList',    'uses'=>'IndexController@projectList']);
+get('projects/{slug}',  ['as'=>'projectCart',    'uses'=>'IndexController@projectCart']);
 
 // Authentication routes...
 Route::get  ('auth/login',      'Auth\AuthController@getLogin');

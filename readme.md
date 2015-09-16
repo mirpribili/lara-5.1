@@ -1,4 +1,31 @@
-CMD
+I:\OpenServer\OpenServer\domains\laravel.5
+
+```88```88``88888``8`````8888888
+```88```88``88`````8`````88````8
+```88```88``88`````8`````88````8
+```8888888``88`````8`````88````8
+```88```88``88888``8`````8888888
+```88```88``88`````8`````88
+```88```88``88`````8`````88
+```88```88``88888``8888``88
+
+
+http://otdel-devsite.ru/category/laravel/
+http://amegatron.ru/category/laravel/
+http://graker.ru/news/2015/07/20/laravel_5_invite_registration
+http://laravelcoding.com/blog?tag=L5+Beauty
+http://mobiof.mobi/ascii-art-generator-teksta-i-kartinok-online.html
+
+```8888888``88`````88``888888
+```88```88``888````88``88```88
+```88```````888```888``88```88
+```88```````8888``888``88```88
+```88```````88`8`8`88``88```88
+```88```````88``88`88``88```88
+```88```88``88``8``88``88```88
+```8888888``88`````88``888888
+
+
 php artisan migrate
     php artisan migrate:reset
 php artisan migrate
@@ -11,11 +38,37 @@ php artisan make:model Menu
 php artisan make:migration --create=menus create_menus_table
 php artisan make:seeder menus
 
+php artisan make:model Slider
+php artisan make:migration --create=slider create_slider
+        sudo chmod -R 777 public/uploads -- права на запись ONLY LINUX
+
+
+````888888888888````88```888888888888
+````888``````888````88```````888
+````888``````888`````````````888
+````888``````888````88```````888
+````888`````````````88```````888
+````888`````````````88```````888
+````888`````````````88```````888
+````888```888888````88```````888
+````888``````888````88```````888
+````888``````888````88```````888
+````888``````888````88```````888
+````888``````888````88```````888
+````888``````888````88```````888
+````888``````888````88```````888
+````888888888888````88```````888
+
+
 git init
 git add .gitignore
 git add .
-
-
+    git config user.name olenr11
+    git config user.email olenr11@google.com
+git commit -m "Hero"
+git remote add origin https://github.com/olenr11/lara-5.1.git
+git push -u origin master
+        git remote show origin -- view url for push
 
 
 

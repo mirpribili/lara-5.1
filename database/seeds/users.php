@@ -16,7 +16,8 @@ class users extends Seeder
             [
                 'name'		=>'Admin',
                 'email' 	=>'admin@admin.ya',
-                'password'	=>'$2y$10$KmWJAKYfeed8Qf7c0VybNOLXu65PyavkyrVLurz5IzHyML9fC/KHu',
+                'password'=>bcrypt('123456'),
+                //'password'	=>'$2y$10$KmWJAKYfeed8Qf7c0VybNOLXu65PyavkyrVLurz5IzHyML9fC/KHu',
                 'role'		=>'admin',
                 //'bann'		=>'0',
                 //'about'		=>'123456',
