@@ -14,10 +14,15 @@
         <div><a href="auth/login">Enter to site</a> </div>
     @endif
 
-<?
+    @foreach($slides as $slide)
+        <img src="/uploads/slides/small/{{$slide->image}}" alt=""/>
+    @endforeach
+
+<hr>
+<? asset('/');
 echo '<img src="'.asset('/uploads/slides/small/r835lAdPHjLOiGEYL4IQT61ejGlXpWyj.png').'">';
 ?>
-    <img src="http://laraii.5/uploads/slides/small/r835lAdPHjLOiGEYL4IQT61ejGlXpWyj.png">
+    <img src="http://laraii.5/uploads/slider/original/r835lAdPHjLOiGEYL4IQT61ejGlXpWyj.png">
 
     {{--
     <div>Исчезающая(в portable FF40.0.3) иконка в ряду</div>

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Menu extends Model
+class Menu extends ExtendModel
 {
     protected $table='menus';
 
@@ -16,13 +16,6 @@ class Menu extends Model
         return $this->orderBy('weight')->published()->right()->get();
     }
 
-
-
-
-    /* scope - своего рода области или заготовки */
-    public function scopePublished($query){
-        $query->where(['active'=>'1']);
-    }
     public function scopeLeft($query){
         $query->where(['position'=>'left']);
     }

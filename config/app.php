@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -147,6 +147,7 @@ return [
         // production
         Frozennode\Administrator\AdministratorServiceProvider::class,
         SmartCrowd\Rbac\RbacServiceProvider::class,
+        Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider::class,
 
         //developer
         Barryvdh\Debugbar\ServiceProvider::class,
@@ -202,6 +203,8 @@ return [
 
         // production
         'Rbac'      => SmartCrowd\Rbac\Facades\Rbac::class,
+        'LocalizedCarbon'   => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
+        //'DiffFormatter'     => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
 
         //dev
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,

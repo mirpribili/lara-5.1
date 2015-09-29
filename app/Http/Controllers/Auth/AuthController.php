@@ -33,6 +33,7 @@ class AuthController extends Controller
     public function __construct()
     {
         $redirectTo=redirect()->route('home');
+
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 

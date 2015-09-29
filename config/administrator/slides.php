@@ -1,15 +1,13 @@
 <?php
 return [
-    'title'     =>'Slides',
-    'single'    =>'slide',
+    'title'     =>'Слайды',//slides
+    'single'    =>'слайд',
     'model'     =>'App\Slider',
     'columns'   =>[
         'id',
         'active',
         'image'=>[
-            'output'    =>'<img src="/uploads/slider/small/(:value)" />',
-            //'output'    =>'<img src="'.asset('/uploads/slider/small/(:value)'.'" />'),
-            //'output'    =>'<img src="http://laraii.5/uploads/slider/small/(:value)" />',
+            'output'    =>'<img src="/uploads/slides/small/(:value)" />',
         ],
     ],
     'edit_fields' =>[
@@ -26,8 +24,8 @@ return [
                 [100, 100,'auto',public_path().'/uploads/slides/small/',100],
                 [1000,500,'auto',public_path().'/uploads/slides/large/',100],
             ],
-        ]
-    ]
+        ],
+    ],
 
 ];
 

@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call('users');
         $this->call('menus');
+        $this->call('slides');
+        $this->call('galleries');
+        $this->call('projects');
         $this->command->info('Table is full !');
 
         Model::reguard();

@@ -40,13 +40,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 
     /**
-     * Äîëæåí âåðíóòü ìàññèâ ïðàâ è ðîëåé, íàçíà÷åííûõ ïîëüçîâàòåëþ
+     * Ð”Ð¾Ð»Ð¶ÐµÐ½ Ð²ÐµÑ€Ð½ÑƒÑ‚ÑŒ Ð¼Ð°ÑÑÐ¸Ð² Ð¿Ñ€Ð°Ð² Ð¸ Ñ€Ð¾Ð»ÐµÐ¹, Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð½Ñ‹Ñ… Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÑŽ
      *
-     * @return array Ìàññèâ íàçíà÷åííûõ ïðàâ è ðîëåé
+     * @return array ÐœÐ°ÑÑÐ¸Ð² Ð½Ð°Ð·Ð½Ð°Ñ‡ÐµÐ½Ð½Ñ‹Ñ… Ð¿Ñ€Ð°Ð² Ð¸ Ñ€Ð¾Ð»ÐµÐ¹
      */
     public function getAssignments()
     {
-        // âàøà ðåàëèçàöèÿ
         return [$this->role];
+    }
+
+    public function getAllInterwes(){
+        return$interwes = $this->find(1)->interviews;
+        //return$this->where(['id'=>\Auth::id()])->get();
+    }
+
+    // Ð´Ð»Ñ Ð²Ñ‹Ð±Ð¾Ñ€ÐºÐ¸ Ð¸Ð½Ñ‚ÐµÑ€ÑŒÐ²ÑŽ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ð¯
+    public function interviews(){
+        return $this->hasMany('App\Interview');
     }
 }

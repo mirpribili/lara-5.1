@@ -55,6 +55,11 @@ return array(
 		'user',
 		'menus',
 		'slides',
+		'projects',
+		'blogs',
+		'presses',
+		'galleries',
+		'Настройки'=>['settings.about','settings.settings'],
 	),
 
 	/**
@@ -136,5 +141,6 @@ return array(
 	 * @type array
 	 */
 	'locales' => array(),
+	//'locales' => array('en','ru'),
 
 );

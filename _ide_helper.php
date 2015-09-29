@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.10 (LTS) on 2015-09-11.
+ * Generated for Laravel 5.1.17 (LTS) on 2015-09-28.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -762,7 +762,7 @@ namespace {
         /**
          * Register a shared binding in the container.
          *
-         * @param string $abstract
+         * @param string|array $abstract
          * @param \Closure|string|null $concrete
          * @return void 
          * @static 
@@ -2943,6 +2943,17 @@ namespace {
         }
         
         /**
+         * Is Doctrine available?
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function isDoctrineAvailable(){
+            //Method inherited from \Illuminate\Database\Connection            
+            return \Illuminate\Database\MySqlConnection::isDoctrineAvailable();
+        }
+        
+        /**
          * Get a Doctrine Schema Column instance.
          *
          * @param string $table
@@ -3441,6 +3452,7 @@ namespace {
          * @param string $pageName
          * @param int|null $page
          * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator 
+         * @throws \InvalidArgumentException
          * @static 
          */
         public static function paginate($perPage = null, $columns = array(), $pageName = 'page', $page = null){
@@ -7511,6 +7523,17 @@ namespace {
 
 
     class Queue extends \Illuminate\Support\Facades\Queue{
+        
+        /**
+         * Register an event listener for the after job event.
+         *
+         * @param mixed $callback
+         * @return void 
+         * @static 
+         */
+        public static function after($callback){
+            \Illuminate\Queue\QueueManager::after($callback);
+        }
         
         /**
          * Register an event listener for the daemon queue loop.
@@ -11884,6 +11907,112 @@ namespace {
          */
         public static function getNames(){
             return \Illuminate\View\Factory::getNames();
+        }
+        
+    }
+
+
+    class Rbac extends \SmartCrowd\Rbac\Facades\Rbac{
+        
+        /**
+         * 
+         *
+         * @param \SmartCrowd\Rbac\Assignable|null $user
+         * @param string $itemName
+         * @param array $params
+         * @return boolean 
+         * @static 
+         */
+        public static function checkAccess($user, $itemName, $params = array()){
+            return \SmartCrowd\Rbac\Manager::checkAccess($user, $itemName, $params);
+        }
+        
+        /**
+         * 
+         *
+         * @param string $itemName
+         * @return bool 
+         * @static 
+         */
+        public static function has($itemName){
+            return \SmartCrowd\Rbac\Manager::has($itemName);
+        }
+        
+        /**
+         * 
+         *
+         * @param array|string $actions
+         * @param array|string $permissions
+         * @static 
+         */
+        public static function action($actions, $permissions){
+            return \SmartCrowd\Rbac\Manager::action($actions, $permissions);
+        }
+        
+        /**
+         * 
+         *
+         * @param string $controllerName
+         * @param string $prefix
+         * @static 
+         */
+        public static function controller($controllerName, $prefix){
+            return \SmartCrowd\Rbac\Manager::controller($controllerName, $prefix);
+        }
+        
+        /**
+         * 
+         *
+         * @param string $name
+         * @param array $children
+         * @param \Closure $rule
+         * @static 
+         */
+        public static function permission($name, $children = array(), $rule = null){
+            return \SmartCrowd\Rbac\Manager::permission($name, $children, $rule);
+        }
+        
+        /**
+         * 
+         *
+         * @param string $name
+         * @param array $children
+         * @static 
+         */
+        public static function role($name, $children){
+            return \SmartCrowd\Rbac\Manager::role($name, $children);
+        }
+        
+        /**
+         * 
+         *
+         * @param string $itemName
+         * @param string $controller
+         * @param string $foreignKey
+         * @static 
+         */
+        public static function resource($itemName, $controller = null, $foreignKey = null){
+            return \SmartCrowd\Rbac\Manager::resource($itemName, $controller, $foreignKey);
+        }
+        
+        /**
+         * 
+         *
+         * @return \SmartCrowd\Rbac\ItemsRepository 
+         * @static 
+         */
+        public static function getRepository(){
+            return \SmartCrowd\Rbac\Manager::getRepository();
+        }
+        
+        /**
+         * 
+         *
+         * @var ItemsRepository $repository
+         * @static 
+         */
+        public static function setRepository($repository){
+            return \SmartCrowd\Rbac\Manager::setRepository($repository);
         }
         
     }

@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class projects extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        \DB::table('projects')->truncate();
+        \App\Menu::create(
+            [
+                'active'		=>'1',
+                'title'		    =>'First',
+                'slug'		    =>'first',
+                'image'		    =>'FpAzPWZQyeGoS4Gp6HwVeKYzu9cOmniV.png',
+                'content'		=>'<p><em><s><strong>Content</strong></s></em></p>',
+            ]);
+        \App\Menu::create(
+            [
+                'active'		=>'1',
+                'title'		    =>'Second',
+                'slug'		    =>'second',
+                'image'		    =>'JQ2h8X04S5HkGOsXQNxFyrOXhbZPxkU6.png',
+                'content'		=>'<p>Content</p>',
+            ]);
+    }
+}

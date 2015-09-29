@@ -1,7 +1,7 @@
 <?php
 return [
-    'title'     =>'Menu',
-    'single'    =>'item',
+    'title'     =>'Меню',
+    'single'    =>'элемент',//item
     'model'     =>'App\Menu',
     'columns'   =>[
         'id',
@@ -30,7 +30,7 @@ return [
             ],
         ],
     ],
-    'filter'=>[
+    'filters'=>[
         'active'=>[
             'type'=>'bool'
         ],
@@ -42,7 +42,7 @@ return [
             'options'=>[
                 'left',
                 'right',
-            ]
+            ],
         ],
-    ]
+    ],
 ];
