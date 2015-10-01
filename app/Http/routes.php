@@ -28,8 +28,15 @@ Route::get  ('auth/login',      'Auth\AuthController@getLogin');
 Route::post ('auth/login',      'Auth\AuthController@postLogin');
 Route::get  ('auth/logout',     'Auth\AuthController@getLogout');
 
+Route::group(['middleware' => 'auth'], function() {
+    get('lk',               ['as' => 'lk.index', 'uses' => 'LkController@index']);
+    get('addInterview',     ['as' => 'addInterview',    'uses' => 'InterviewController@create']);
+    get('myInterview',      ['as' => 'myInterview',     'uses' => 'InterviewController@index']);
+    get('addInterview/{id}',['as' => 'edithInterview',  'uses' => 'InterviewController@edit'])->where('id', '[0-9]+');
+    post('storeInterview',  ['as' => 'storeInterview',  'uses' => 'InterviewController@store']);
 
-get('lk',               ['as'=>'lk.index',      'uses'=>'LkController@index']);
-get('myInterview',      ['as'=>'myInterview',   'uses'=>'InterviewController@index']);
-get('addInterview',     ['as'=>'addInterview',  'uses'=>'InterviewController@create']);
-post('storeInterview',  ['as'=>'storeInterview','uses'=>'InterviewController@store']);
+});
+Route::group(['middleware' => 'users.updateInterview.self'], function() {
+});
+
+

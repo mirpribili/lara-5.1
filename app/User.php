@@ -50,7 +50,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     public function getAllInterwes(){
-        return$interwes = $this->find(1)->interviews;
+        return$interwes = $this->find(\Auth::id())->interviews()->latest()->get();
+    }
+
+    public function getInterwes($id){
+        return$interwes = $this->find(\Auth::id())->interviews()->where('id', '=', $id)->firstOrFail();
         //return$this->where(['id'=>\Auth::id()])->get();
     }
 

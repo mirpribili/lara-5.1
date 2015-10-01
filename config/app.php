@@ -148,6 +148,7 @@ return [
         Frozennode\Administrator\AdministratorServiceProvider::class,
         SmartCrowd\Rbac\RbacServiceProvider::class,
         Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider::class,
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
 
         //developer
         Barryvdh\Debugbar\ServiceProvider::class,
@@ -205,6 +206,7 @@ return [
         'Rbac'      => SmartCrowd\Rbac\Facades\Rbac::class,
         'LocalizedCarbon'   => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
         //'DiffFormatter'     => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class,
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
 
         //dev
         'Debugbar'  => Barryvdh\Debugbar\Facade::class,

@@ -66,9 +66,10 @@ class InterviewController extends MainController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, User $user)
     {
-        //
+        $this->data['interview']=$user->getInterwes($id);
+        return view('interview.create',$this->data);
     }
 
     /**

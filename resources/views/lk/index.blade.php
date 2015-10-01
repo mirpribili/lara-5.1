@@ -8,6 +8,8 @@
 @extends('layouts.default')
 
 @section('content')
+    {!! Breadcrumbs::render('LK') !!}
+
     <h1>Личный кабинет</h1>
     <div class="container-fluid">
         {{--lg md sm xs--}}

@@ -1,12 +1,23 @@
 <?php
+//https://github.com/SmartCrowd/laravel-rbac/blob/master/readme_rus.md
+//http://www.yiiframework.com/doc-2.0/guide-security-authorization.html#access-check
 
 Rbac::permission('users.crud');
 //Rbac::permission('users.view');
 //Rbac::permission('users.update.self');
+/*
+Rbac::permission('users.viewInterview.self',    function($params) {
+    return $this->user->id == $params['user']->id;
+});
 
+Rbac::permission('users.updateInterview.self',  function($params) {
+    return $this->user->id == $params['user']->id;
+});
+*/
 Rbac::role('user', [
 //    'users.view',
-//    'users.update.self'
+    //'users.viewInterview.self',
+    //'users.updateInterview.self',
 ]);
 
 

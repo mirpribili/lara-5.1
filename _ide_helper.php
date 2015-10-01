@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.1.17 (LTS) on 2015-09-28.
+ * Generated for Laravel 5.1.17 (LTS) on 2015-09-29.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12014,6 +12014,11 @@ namespace {
         public static function setRepository($repository){
             return \SmartCrowd\Rbac\Manager::setRepository($repository);
         }
+        
+    }
+
+
+    class LocalizedCarbon extends \Laravelrus\LocalizedCarbon\LocalizedCarbon{
         
     }
 
